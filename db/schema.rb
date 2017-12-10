@@ -12,12 +12,15 @@
 
 ActiveRecord::Schema.define(version: 20171106204443) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "bikes", force: :cascade do |t|
     t.string "make"
     t.string "model"
     t.string "color"
     t.string "image"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_bikes_on_user_id"
@@ -35,7 +38,7 @@ ActiveRecord::Schema.define(version: 20171106204443) do
     t.integer "bike_id"
     t.integer "valet_id"
     t.integer "status"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_jobs_on_user_id"
@@ -62,4 +65,6 @@ ActiveRecord::Schema.define(version: 20171106204443) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bikes", "users"
+  add_foreign_key "jobs", "users"
 end
