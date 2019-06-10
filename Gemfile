@@ -54,7 +54,7 @@ gem 'carrierwave', '~> 1.0'
 gem 'carrierwave-mimetype-fu'
 
 gem 'jquery-rails'
-gem 'bootstrap-sass'
+gem "bootstrap-sass", ">= 3.4.1"
 
 gem 'therubyracer'
 gem 'less-rails-bootstrap'
