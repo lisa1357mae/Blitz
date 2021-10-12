@@ -134,7 +134,8 @@ GEM
     pony (1.12)
       mail (>= 2.0)
     public_suffix (3.0.2)
-    puma (3.11.4)
+    puma (4.3.9)
+      nio4r (~> 2.0)
     rack (2.0.5)
     rack-protection (2.0.3)
       rack
@@ -250,7 +251,7 @@ DEPENDENCIES
   less-rails-bootstrap
   pg
   pony
-  puma (~> 3.7)
+  puma (~> 4.3)
   rails (~> 5.1.4)
   sass-rails (~> 5.0)
   selenium-webdriver
